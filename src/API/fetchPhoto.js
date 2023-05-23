@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 const BASE_URL = 'https://pixabay.com/api/';
 const API_KEY = '?key=34921015-82cb8e104c87b6309f3f6f395';
 
@@ -11,4 +12,9 @@ export const fetchPhoto = (q, p) => {
     }
     return res.json();
   });
+};
+
+fetchPhoto.propTypes = {
+  q: PropTypes.string.isRequired,
+  p: PropTypes.number.isRequired,
 };
